@@ -1,0 +1,10 @@
+<div>
+  <div>Total Characters : {{ textCount }} / {{ totalCharLengthText }}</div>
+  <input
+    type="text"
+    (keypress)="numberOnly($event)"
+    [(ngModel)]="inputModel"
+    (ngModelChange)="textChange()"
+    [maxlength]="maxLength"
+  />
+</div>

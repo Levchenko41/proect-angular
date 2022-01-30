@@ -1,0 +1,36 @@
+<h1>Login</h1>
+<form [formGroup]="authGroup">
+  <input
+    type="text"
+    class="login"
+    placeholder="login"
+    formControlName="login"
+  />
+  <label class="error" *ngIf="invalidLogin">Error login</label>
+  <input
+    type="text"
+    class="password"
+    placeholder="password"
+    formControlName="password"
+  />
+  <label class="error" *ngIf="invalidPassword"></label>
+</form>
+
+<button type="button" class="btn" (click)="sent()">Sing in</button>
+
+<div class="row" *ngFor="let user of users; index as i">
+  <label class="user">Название {{ user.name }}</label>
+  <label class="user">Возвраст {{ user.age }}</label>
+  <label class="user">Страна {{ user.country }}</label>
+
+  <label class="user"
+    >Место работы
+    {{
+      i === 0
+        ? user.profeccion[0]
+        : i === 1
+        ? user.profeccion[1]
+        : user.profeccion
+    }}</label
+  >
+</div>
